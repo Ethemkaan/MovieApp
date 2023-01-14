@@ -45,6 +45,10 @@ class MovieInfo extends StatelessWidget {
                 child: Image.network(movieDetails['filmImageUrl'].toString()),
               ),
             ),
+            Divider(
+              color: Colors.black,
+
+            ),
             Row(
               children: [
                 Expanded(
@@ -64,6 +68,7 @@ class MovieInfo extends StatelessWidget {
                 )),
               ],
             ),
+
             SizedBox(
               height: 22,
               child: Text(

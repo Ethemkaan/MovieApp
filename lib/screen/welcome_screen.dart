@@ -1,4 +1,5 @@
 import 'package:animated_button/animated_button.dart';
+import 'package:finalproject/screen/login_screen.dart';
 import 'package:finalproject/screen/movies.dart';
 import 'package:flutter/material.dart';
 
@@ -55,7 +56,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 color: Colors.black54,
                 onPressed: () {
                   Navigator.of(context)
-                      .push(MaterialPageRoute(builder: (context) => Movies()));
+                      .push(MaterialPageRoute(builder: (context) => LoginScreen()));
                 },
               ),
             ),

@@ -34,27 +34,24 @@ class _TopTenState extends State<TopTen> {
             elevation:20,
             color: Colors.white,
             child: ListTile(
-              leading: Image.asset('assets/leon.jpg'),
-              title: Text("Leon"),
+              leading: Image.asset('assets/esaret.jpg'),
+              title: Text("The Shawshank Redemption \n IMDB:9.2"),
               trailing: Icon(Icons.movie_filter_outlined,
-              size: 55),
+              size: 45),
             ),
           ),
-
-
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10),
             child: Divider(color: Colors.black, height: 30,),
-          ), //aralarına çizgi tanımlamak için
-          //Divider widget'ını tanımlıyoruz
+          ),
 
           Card(
             margin: EdgeInsets.all(10),
             elevation:20,
             color: Colors.white,
             child: ListTile(
-              leading: Image.asset('assets/avatar.jpg'),
-              title: Text("Avatar"),
+              leading: Image.asset('assets/thegodfather.jpg'),
+              title: Text("The Godfather \n IMDB:9.2"),
 
               trailing: Icon(Icons.movie_filter_outlined,size: 55),
             ),
@@ -70,8 +67,8 @@ class _TopTenState extends State<TopTen> {
             elevation:20,
             color: Colors.white,
             child: ListTile(
-              leading: Image.asset('assets/avangers.jpg'),
-              title: Text("Avangers"),
+              leading: Image.asset('assets/dark.jpg'),
+              title: Text("The Dark Knight \n IMDB:9.0"),
 
               trailing: Icon(Icons.movie_filter_outlined,size: 55),
             ),
@@ -86,8 +83,8 @@ class _TopTenState extends State<TopTen> {
             elevation:20,
             color: Colors.white,
             child: ListTile(
-              leading: Image.asset('assets/harry.jpg'),
-              title: Text("Harry Potter"),
+              leading: Image.asset('assets/thegodfather2.jpg'),
+              title: Text("The Godfather 2 \n IMDB:9.0"),
 
               trailing: Icon(Icons.movie_filter_outlined,size: 55),
             ),
@@ -102,8 +99,8 @@ class _TopTenState extends State<TopTen> {
             elevation:20,
             color: Colors.white,
             child: ListTile(
-              leading: Image.asset('assets/arog.jpg'),
-              title: Text("Arog"),
+              leading: Image.asset('assets/12adam.jpg'),
+              title: Text("12 Angry Men \n IMDB:9.0"),
 
               trailing: Icon(Icons.movie_filter_outlined,size: 55),
             ),

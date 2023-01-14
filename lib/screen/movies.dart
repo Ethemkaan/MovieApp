@@ -1,6 +1,6 @@
 import 'package:animated_button/animated_button.dart';
 import 'package:finalproject/screen/movie_info.dart';
-import 'package:finalproject/screen/top_10_screen.dart';
+import 'package:finalproject/screen/top_5_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../service/film_service.dart';
@@ -54,9 +54,11 @@ class _MoviesState extends State<Movies> {
                   ),
                 ),
               ),
-              SizedBox(
-                height: 30,
+              Divider(
+                color: Colors.black,
+
               ),
+
               Column(
                 children: [
                   TextField(
