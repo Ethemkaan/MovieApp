@@ -10,7 +10,7 @@ class MovieInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffbbdefb),
+      backgroundColor: Color(0xFFCFD8DC),
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: Colors.black,
@@ -19,7 +19,7 @@ class MovieInfo extends StatelessWidget {
           movieDetails['filmName'].toString(),
           style: TextStyle(
             fontSize: 28,
-            color: Color(0xffbbdefb),
+            color: Color(0xFFCFD8DC),
           ),
         ),
         toolbarTextStyle: TextTheme(
@@ -40,13 +40,10 @@ class MovieInfo extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(25.0),
               child: SizedBox(
-                width: 250,
+                width: 400,
                 height: 250,
                 child: Image.network(movieDetails['filmImageUrl'].toString()),
               ),
-            ),
-            SizedBox(
-              height: 30,
             ),
             Row(
               children: [
@@ -54,36 +51,47 @@ class MovieInfo extends StatelessWidget {
                     child: Padding(
                   padding: const EdgeInsets.all(25.0),
                   child: Container(
+                    alignment: Alignment.center,
                     height: 30,
                     child: Text(
                       'IMDB PUANI : ' + movieDetails['filmRating'].toString(),
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold
+                      ),
                     ),
                   ),
-                )),
-                SizedBox(
-                  height: 20,
-                ),
-                Expanded(
-                    child: Padding(
-                  padding: const EdgeInsets.all(25.0),
-                  child: Container(
-                      height: 30,
-                      child: ListView(
-                        children: [Text('ACTORS:')],
-                      )),
                 )),
               ],
             ),
             SizedBox(
-                height: 100,
-                child: Text(
-                  movieDetails['filmPlot'].toString(),
-                  style: TextStyle(fontSize: 12),
-                  textAlign: TextAlign.center,
-                )),
-            SizedBox(
-              height: 100,
+              height: 22,
+              child: Text(
+                'Storyline',
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                  color:Colors.brown
+                ),
+              ),
             ),
+            SingleChildScrollView(
+              reverse: true,
+            child :SizedBox(
+                height: 200,
+                child: Container(
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Text(
+                    movieDetails['filmPlot'].toString(),
+                    style: TextStyle(
+                        fontSize:16,
+                      fontWeight: FontWeight.w400,
+                      fontStyle: FontStyle.italic
+                    ),
+                    textAlign: TextAlign.left,
+                  ),
+                ))),),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -91,7 +99,6 @@ class MovieInfo extends StatelessWidget {
                   onPressed: () {
                     Navigator.of(context).push(
                         MaterialPageRoute(builder: (context) => Movies()));
-                    //BASINCA NE OLACAĞI BURADAN YAPILACAK
                   },
                   label: Icon(Icons.arrow_back),
                   icon: Text('BACK'),

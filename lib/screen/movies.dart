@@ -18,7 +18,7 @@ class _MoviesState extends State<Movies> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Color(0xffbbdefb),
+        backgroundColor: Color(0xFFCFD8DC),
         appBar: AppBar(
           centerTitle: true,
           backgroundColor: Colors.black,
@@ -27,7 +27,7 @@ class _MoviesState extends State<Movies> {
             'All Movies Here !!!!',
             style: TextStyle(
               fontSize: 28,
-              color: Color(0xffbbdefb),
+              color: Color(0xFFCFD8DC),
             ),
           ),
           toolbarTextStyle: TextTheme(
@@ -45,15 +45,14 @@ class _MoviesState extends State<Movies> {
           reverse: true,
           child: Column(
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Image.asset(
-                    'assets/filmler.jpg',
-                    width: 350,
-                    height: 300,
+              SizedBox(
+                height: 300,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(300.0),
+                  child: Image.asset(
+                      "assets/filmler.jpg"
                   ),
-                ],
+                ),
               ),
               SizedBox(
                 height: 30,
@@ -66,39 +65,49 @@ class _MoviesState extends State<Movies> {
                     },
                     decoration: InputDecoration(
                       labelText: ('Which movie would you like to watch?'),
-                      labelStyle: TextStyle(color: Colors.black, fontSize: 21),
+                      labelStyle: TextStyle(color: Colors.black, fontSize: 20),
                       hintText: '',
                       border: OutlineInputBorder(
                         borderSide: BorderSide(
                           color: Colors.black,
-                        ),
+                          
+                        ),borderRadius: BorderRadius.circular(25)
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderSide: BorderSide(color: Colors.black),
                       ),
                     ),
                   ),
-                  ElevatedButton.icon(
-                    onPressed: () {
-                      service.findFilmInfo(promptedFilm).then((value) {
-                        if (value != null) {
-                          Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) =>
-                                  MovieInfo(movieDetails: value)));
-                        } else {}
-                      });
-
-                      //BASINCA NE OLACAĞI BURADAN YAPILACAK
-                    },
-                    label: Icon(Icons.search),
-                    icon: Text('Search'),
-                    style: ElevatedButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(30)),
-                        backgroundColor: Colors.black),
+                  SizedBox(
+                    height: 35,
                   ),
                   SizedBox(
                     height: 50,
+                    width: 150,
+                    child: ElevatedButton.icon(
+                      onPressed: () {
+                        service.findFilmInfo(promptedFilm).then((value) {
+                          if (value != null) {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) =>
+                                    MovieInfo(movieDetails: value)));
+                          } else {}
+                        });
+                      },
+                      label: Icon(Icons.search),
+                      icon: Text('Search',
+                      style: TextStyle(
+                        fontSize: 20
+                      ),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(30)),
+                          backgroundColor: Colors.black),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 35,
                   ),
                   AnimatedButton(
                       child: Text(
